@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>My movies</h1>
+    {% for movie in movies_data%}
+    <a href="{{url_for('movie_info', movie_id=movie.id)}}"> <img src="{{ url_for('display_image', filename=movie.filename)}}"></a>
+    {%endfor%}
+</body>
+</html>

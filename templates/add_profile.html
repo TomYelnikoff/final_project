@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies data management</title>
+</head>
+<body>
+    <a href="/">HOME</a>
+    <form action="/add" method="post" enctype="multipart/form-data">
+      <dl>
+        <labe>Poster upload</labe>
+        <p>
+          <input type="file" name="filename" required>
+        </p>
+      </dl>
+        <label>Movie title</label>
+        <input type="text" name="movie_title" required></br>
+        <label>Description</label>
+        <textarea type="text" name="description" required></textarea></br>
+        <label>Director</label>
+        <input type="text" name="director" required></br>
+        <label>Release year</label>
+        <input type="number" name="release_year" required></br>
+        <button type="submit">ADD</button>
+    </form>
+</body>
+</html>

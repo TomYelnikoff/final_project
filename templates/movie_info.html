@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My movie</title>
+</head>
+<body>
+<ol>
+  <li><h1>{{movie_specific.movie_title}}</h1></li>
+  <li>{{movie_specific.director}}</li>
+  <li>{{movie_specific.description}}</li>
+  <li>{{movie_specific.release_year}}</li>
+</ol>
+<form method="post" action="/add_review">
+    <label>Name</label>
+    <input type="text" name="name" required>
+    <label>Review</label>
+    <textarea type="text" name="review_text"></textarea>
+    <input type="hidden" name="movie_id" value="{{movie_specific.id}}">
+    <button type="submit">ADD</button>
+</form>
+<ol>
+    {%for review in reviews_specific %}
+    <li>{{review.name}}</li>
+    <li>{{review.review_text}}</li>
+    {%endfor%}
+</ol>
+<a href="/delete/{{movie_specific.id}}" type="button">Delete</a>
+<a href="/alter_movie/{{movie_specific.id}}" type="button">ALTER</a>
+</body>
+</html>
